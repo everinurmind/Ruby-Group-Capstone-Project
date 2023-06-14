@@ -22,9 +22,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [OOP school library] <a name="about-project"></a>
+# 📖 [Ruby-Group-Capstone-Project] <a name="about-project"></a>
 
-The "OOP school library" project is a Ruby exercise designed to help users warm up.
+The "Ruby-Group-Capstone-Project" project is a Ruby exercise designed to help users warm up and work as a group.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -63,7 +63,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone git@github.com:everinurmind/school-lib.git
+  git clone git@github.com:everinurmind/Ruby-Group-Capstone-Project.git
 ```
 
 ### Usage
@@ -109,7 +109,7 @@ To run the project, execute the following commands:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/everinurmind/school-lib/issues).
+Feel free to check the [issues page](https://github.com/everinurmind/Ruby-Group-Capstone-Project/tree/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
