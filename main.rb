@@ -18,3 +18,19 @@ def archive_item
   item = Item.new(Date.parse(publish_date))
   item.move_to_archive
 end
+loop do
+    print_menu
+    choice = gets.chomp.to_i
+    case choice
+    when 1
+      create_item
+    when 2
+      archive_item
+    when 3
+      puts 'Exiting the app. Goodbye!'
+      break
+    else
+      puts 'Invalid choice. Please try again.'
+    end
+    puts '-' * 20
+  end
