@@ -21,4 +21,12 @@ class Label
       items: items.map(&:id)
     }
   end
+
+  def self.all_labels(labels)
+    puts 'Listing all labels:'
+    labels.each do |label|
+      puts "Label: #{label.title}, Color: #{label.color}"
+    end
+    puts
+  end
 end
