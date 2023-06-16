@@ -13,6 +13,11 @@ class Book < Item
     @label = nil
   end
 
+  def add_label(label)
+    @label = label
+    label.books << self
+  end
+
   def to_hash
     {
       id: @id,
