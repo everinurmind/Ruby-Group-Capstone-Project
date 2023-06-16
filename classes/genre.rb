@@ -1,17 +1,26 @@
 class Genre
-    attr_accessor :name, :items
-  
-    def initialize(name)
-      @id = rand(1000)
-      @name = name
-      @items = []
-    end
-  
-    def add_item(item)
-      item.genre = self
-    end
-  
-    def self.from_parsed_json(genre, _helper_data)
-      new(genre['name'])
-    end
+  attr_accessor :id, :name, :items
+  def initialize(id, name)
+    @id = id
+    @name = name
+    @items = []
   end
+  def add_item(item)
+    items << item
+    item.genre = self
+  end
+  def to_hash
+    {
+      id: id,
+      name: name,
+      items: items.map(&:id)
+    }
+  end
+  def self.all_genres(genres)
+    puts 'Listing all genres:'
+    genres.each do |genre|
+      puts "Genre: #{genre.name}"
+    end
+    puts
+  end
+end
