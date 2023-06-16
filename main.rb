@@ -19,10 +19,12 @@ def list_books(books)
   end
   puts
 end
+
 def list_labels(labels)
   puts 'Listing all lables:'
   Label.all_labels(labels)
 end
+
 def add_book(books, labels, genres)
   puts 'Adding a new book:'
   print 'Title: '
@@ -52,6 +54,7 @@ def add_book(books, labels, genres)
   puts 'Book added successfully!'
   puts
 end
+
 def list_music_albums(music_albums)
   puts 'Listing all music albums:'
   music_albums.each do |album|
@@ -60,10 +63,12 @@ def list_music_albums(music_albums)
   end
   puts
 end
+
 def list_genres(genres)
   puts 'Listing all genres:'
   Genre.all_genres(genres)
 end
+
 def add_music_album(music_albums, labels, genres)
   puts 'Adding a new music album:'
   print 'Title: '
@@ -173,4 +178,4 @@ loop do
     puts 'Invalid choice. Please try again.'
     puts
   end
-end 
+end

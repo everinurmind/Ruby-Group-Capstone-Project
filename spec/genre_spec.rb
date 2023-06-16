@@ -29,4 +29,4 @@ RSpec.describe Genre do
       end.to output("Listing all genres:\nGenre: Science Fiction\nGenre: Fantasy\n\n").to_stdout
     end
   end
-end 
+end
