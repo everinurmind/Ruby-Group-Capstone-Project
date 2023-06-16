@@ -1,21 +1,26 @@
-require_relative 'item'
-
 class MusicAlbum < Item
-  attr_accessor :on_spotify
-
-  def initialize(on_spotify, publish_date, archived, title)
-    super(publish_date: publish_date, archived: archived, title: title)
+  attr_accessor :title, :artist, :on_spotify, :genre, :archived, :label
+  def initialize(publish_date, artist, on_spotify, id = nil)
+    super(publish_date, id)
+    @title = nil
+    @artist = artist
     @on_spotify = on_spotify
+    @genre = nil
+    @archived = false
+    @label = nil
   end
-
+  def to_hash
+    {
+      id: @id,
+      label: @label,
+      publish_date: @publish_date,
+      archived: @archived,
+      artist: @artist,
+      on_spotify: @on_spotify,
+      genre: @genre&.id
+    }
+  end
   def can_be_archived?
-    super && @on_spotify
-  end
-
-  def self.from_parsed_json(music_album, helper_data)
-    new_music_album = new(music_album['on_spotify'], music_album['publish_date'],
-                          music_album['archived'], music_album['title'])
-    new_music_album.genre = helper_data[:genres].find { |genre| genre.name == music_album['genre'] }
-    new_music_album
+    (Date.today - @publish_date).to_i >= 3652 && @on_spotify
   end
 end
