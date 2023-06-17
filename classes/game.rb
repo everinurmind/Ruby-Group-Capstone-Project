@@ -16,6 +16,15 @@ class Game < Item
     last_played_days_ago >= 365 * 2
   end
 
+  def to_hash
+    {
+      id: @id,
+      genre: @genre,
+      multiplayer: @multiplayer,
+      last_played_at: @last_played_at.to_s
+    }
+  end
+
   def self.load_games(filename)
     JSON.parse(File.read(filename), symbolize_names: true).map do |game_data|
       Game.new(nil, nil, nil, game_data[:multiplayer], Date.parse(game_data[:last_played_at]))

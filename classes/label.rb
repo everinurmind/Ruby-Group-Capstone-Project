@@ -15,7 +15,7 @@ class Label
   end
 
   def add_item(item)
-    items << item
+    books << item
     item.label = self
   end
 
