@@ -1,5 +1,4 @@
 require 'json'
-
 def load_books(books)
   return unless File.exist?(BOOKS_FILE)
 
@@ -70,4 +69,34 @@ end
 def save_genres(genres)
   genres_data = genres.map(&:to_hash)
   File.write(GENRES_FILE, JSON.generate(genres_data))
+end
+
+def load_games(games)
+  return unless File.exist?(GAMES_FILE)
+
+  games_data = JSON.parse(File.read(GAMES_FILE))
+  games_data.each do |game_data|
+    game = Game.new(nil, game_data['genre'], nil, game_data['multiplayer'], Date.parse(game_data['last_played_at']))
+    games << game
+  end
+end
+
+def save_games(games)
+  games_data = games.map(&:to_hash)
+  File.write(GAMES_FILE, JSON.pretty_generate(games_data))
+end
+
+def load_authors(authors)
+  return unless File.exist?(AUTHORS_FILE)
+
+  authors_data = JSON.parse(File.read(AUTHORS_FILE))
+  authors_data.each do |author_data|
+    author = Author.new(author_data['id'], author_data['first_name'], author_data['last_name'])
+    authors << author
+  end
+end
+
+def save_authors(authors)
+  authors_data = authors.map(&:to_hash)
+  File.write(AUTHORS_FILE, JSON.dump(authors_data))
 end

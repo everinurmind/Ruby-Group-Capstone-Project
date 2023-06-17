@@ -1,19 +1,59 @@
 def list_books(books)
-  puts 'Listing all books:'
+  puts '=== List of Books ==='
   books.each do |book|
-    puts "Title: #{book.title}, Publisher: #{book.publisher}, Published Date: #{book.publish_date}"
+    puts "Title: #{book.title}, Author: #{book.author}, Publisher: #{book.publisher}, Published Date: #{book.publish_date}"
     puts "Cover State: #{book.cover_state}", "Genre: #{book.genre}", "Label: #{book.label}"
+    puts '---------------------'
+  end
+  puts
+end
+
+def list_music_albums(music_albums)
+  puts '=== List of Music Albums ==='
+  music_albums.each do |album|
+    puts "Title: #{album.title}, Artist: #{album.artist}, Published Date: #{album.publish_date}"
+    puts "On Spotify: #{album.on_spotify}", "Genre: #{album.genre}", "Label: #{album.label}"
+    puts '---------------------------'
+  end
+  puts
+end
+
+def list_games(games)
+  puts '=== List of Games ==='
+  games.each do |game|
+    puts "ID: #{game.id}, Genre: #{game.genre}, Author: #{game.author}, Multiplayer: #{game.multiplayer}"
+    puts "Last Played At: #{game.last_played_at}"
+    puts '---------------------'
+  end
+  puts
+end
+
+def list_genres(genres)
+  puts '=== List of Genres ==='
+  genres.each do |genre|
+    puts genre.name
   end
   puts
 end
 
 def list_labels(labels)
-  puts 'Listing all labels:'
-  Label.all_labels(labels)
+  puts '=== List of Labels ==='
+  labels.each do |label|
+    puts label.title
+  end
+  puts
+end
+
+def list_authors(authors)
+  puts '=== List of Authors ==='
+  authors.each do |author|
+    puts "#{author.first_name} #{author.last_name}"
+  end
+  puts
 end
 
 def add_book(books, labels, genres)
-  puts 'Adding a new book:'
+  puts '=== Add a Book ==='
   print 'Title: '
   title = gets.chomp
   print 'Author: '
@@ -42,22 +82,8 @@ def add_book(books, labels, genres)
   puts
 end
 
-def list_music_albums(music_albums)
-  puts 'Listing all music albums:'
-  music_albums.each do |album|
-    puts "Title: #{album.title}, Artist: #{album.artist}, Published Date: #{album.publish_date}"
-    puts "On Spotify: #{album.on_spotify}", "Genre: #{album.genre}", "Label: #{album.label}"
-  end
-  puts
-end
-
-def list_genres(genres)
-  puts 'Listing all genres:'
-  Genre.all_genres(genres)
-end
-
 def add_music_album(music_albums, labels, genres)
-  puts 'Adding a new music album:'
+  puts '=== Add a Music Album ==='
   print 'Title: '
   title = gets.chomp
   print 'Artist: '
@@ -80,5 +106,22 @@ def add_music_album(music_albums, labels, genres)
   album.genre = genre
   music_albums << album
   puts 'Music album added successfully!'
+  puts
+end
+
+def add_game(games, authors)
+  puts '=== Add a Game ==='
+  print 'Genre: '
+  genre = gets.chomp
+  print 'Author ID: '
+  author_id = gets.chomp.to_i
+  author = authors.find { |a| a.id == author_id }
+  print 'Multiplayer? (true/false): '
+  multiplayer = gets.chomp.downcase == 'true'
+  print 'Last Played At (YYYY-MM-DD): '
+  last_played_at = gets.chomp
+  game = Game.new(nil, genre, author, multiplayer, Date.parse(last_played_at))
+  games << game
+  puts 'Game added successfully!'
   puts
 end

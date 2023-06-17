@@ -1,15 +1,21 @@
 class Label
-  attr_accessor :id, :title, :color, :items
+  attr_accessor :id, :title, :color, :books, :music_albums
 
   def initialize(id, title, color)
     @id = id
     @title = title
     @color = color
-    @items = []
+    @books = []
+    @music_albums = []
+  end
+
+  def add_book(book)
+    books << book
+    book.label = self
   end
 
   def add_item(item)
-    items << item
+    books << item
     item.label = self
   end
 
