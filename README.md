@@ -8,6 +8,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+- [🎥 Walkthrough Video](#loom-walkthrough)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -42,6 +43,14 @@ The "Ruby-Group-Capstone-Project" project is a Ruby exercise designed to help us
 ### Key Features <a name="key-features"></a>
 
 - **Add classes**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- WALKTHOROUGH VIDEO -->
+
+## 🎥 Loom Walkthrough <a name="loom-walkthrough"></a>
+
+- [Walkthrough video Link](https://drive.google.com/uc?id=1x0gkUq6E7lVjyE6K3ocFNEw9z0smPy8x&)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
