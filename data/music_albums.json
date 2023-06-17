@@ -1,1 +1,11 @@
-[{"id":245,"label":null,"publish_date":"2028-01-01","archived":false,"artist":"One Republic","on_spotify":false,"genre":null}]
+[
+  {
+    "id": 292,
+    "label": null,
+    "publish_date": "2000-01-01",
+    "archived": false,
+    "artist": "RHCP",
+    "on_spotify": true,
+    "genre": null
+  }
+]

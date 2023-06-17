@@ -17,7 +17,7 @@ end
 
 def save_books(books)
   books_data = books.map(&:to_hash)
-  File.write(BOOKS_FILE, JSON.generate(books_data))
+  File.write(BOOKS_FILE, JSON.pretty_generate(books_data))
 end
 
 def load_labels(labels)
@@ -33,7 +33,7 @@ end
 
 def save_labels(labels)
   labels_data = labels.map(&:to_hash)
-  File.write(LABELS_FILE, JSON.generate(labels_data))
+  File.write(LABELS_FILE, JSON.pretty_generate(labels_data))
 end
 
 def load_music_albums(music_albums)
@@ -52,7 +52,7 @@ end
 
 def save_music_albums(music_albums)
   music_albums_data = music_albums.map(&:to_hash)
-  File.write(MUSIC_ALBUMS_FILE, JSON.generate(music_albums_data))
+  File.write(MUSIC_ALBUMS_FILE, JSON.pretty_generate(music_albums_data))
 end
 
 def load_genres(genres)
@@ -68,7 +68,7 @@ end
 
 def save_genres(genres)
   genres_data = genres.map(&:to_hash)
-  File.write(GENRES_FILE, JSON.generate(genres_data))
+  File.write(GENRES_FILE, JSON.pretty_generate(genres_data))
 end
 
 def load_games(games)
@@ -98,5 +98,5 @@ end
 
 def save_authors(authors)
   authors_data = authors.map(&:to_hash)
-  File.write(AUTHORS_FILE, JSON.dump(authors_data))
+  File.write(AUTHORS_FILE, JSON.pretty_generate(authors_data))
 end

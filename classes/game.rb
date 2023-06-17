@@ -24,17 +24,4 @@ class Game < Item
       last_played_at: @last_played_at.to_s
     }
   end
-
-  def self.load_games(filename)
-    JSON.parse(File.read(filename), symbolize_names: true).map do |game_data|
-      Game.new(nil, nil, nil, game_data[:multiplayer], Date.parse(game_data[:last_played_at]))
-    end
-  end
-
-  def self.save_games(games, filename)
-    games_data = games.map do |game|
-      { multiplayer: game.multiplayer, last_played_at: game.last_played_at.to_s }
-    end
-    File.write(filename, JSON.pretty_generate(games_data))
-  end
 end

@@ -11,29 +11,6 @@ RSpec.describe Game do
   end
   let(:filename) { 'games.json' }
 
-  describe '.load_games' do
-    it 'loads games from a JSON file' do
-      File.write(filename, JSON.dump(game_data))
-
-      loaded_games = Game.load_games(filename)
-
-      expect(loaded_games.map(&:multiplayer)).to eq(game_data.map { |data| data[:multiplayer] })
-      expect(loaded_games.map(&:last_played_at)).to eq(game_data.map { |data| Date.parse(data[:last_played_at]) })
-    end
-  end
-
-  describe '.save_games' do
-    it 'saves games to a JSON file' do
-      games = game_data.map { |data| Game.new(nil, nil, nil, data[:multiplayer], Date.parse(data[:last_played_at])) }
-
-      Game.save_games(games, filename)
-
-      loaded_data = JSON.parse(File.read(filename), symbolize_names: true)
-
-      expect(loaded_data).to eq(game_data)
-    end
-  end
-
   describe '#can_be_archived?' do
     context 'when last played more than 2 years ago' do
       let(:game) { Game.new(1, 'RPG', 'John', true, Date.today - 730) }
