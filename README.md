@@ -50,7 +50,7 @@ The "Ruby-Group-Capstone-Project" project is a Ruby exercise designed to help us
 
 ## 🎥 Loom Walkthrough <a name="loom-walkthrough"></a>
 
-- [Walkthrough video Link](https://drive.google.com/uc?id=1x0gkUq6E7lVjyE6K3ocFNEw9z0smPy8x&)
+- [Walkthrough video Link](https://drive.google.com/file/d/1x0gkUq6E7lVjyE6K3ocFNEw9z0smPy8x/view)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -118,7 +118,7 @@ To run the project, execute the following commands:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/everinurmind/Ruby-Group-Capstone-Project/tree/issues).
+Feel free to check the [issues page](https://github.com/everinurmind/Ruby-Group-Capstone-Project/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
