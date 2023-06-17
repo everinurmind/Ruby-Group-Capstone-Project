@@ -7,6 +7,7 @@ def list_books(books)
   end
   puts
 end
+
 def list_music_albums(music_albums)
   puts '=== List of Music Albums ==='
   music_albums.each do |album|
@@ -16,6 +17,7 @@ def list_music_albums(music_albums)
   end
   puts
 end
+
 def list_games(games)
   puts '=== List of Games ==='
   games.each do |game|
@@ -25,6 +27,7 @@ def list_games(games)
   end
   puts
 end
+
 def list_genres(genres)
   puts '=== List of Genres ==='
   genres.each do |genre|
@@ -32,6 +35,7 @@ def list_genres(genres)
   end
   puts
 end
+
 def list_labels(labels)
   puts '=== List of Labels ==='
   labels.each do |label|
@@ -39,6 +43,7 @@ def list_labels(labels)
   end
   puts
 end
+
 def list_authors(authors)
   puts '=== List of Authors ==='
   authors.each do |author|
@@ -46,6 +51,7 @@ def list_authors(authors)
   end
   puts
 end
+
 def add_book(books, labels, genres)
   puts '=== Add a Book ==='
   print 'Title: '
@@ -75,6 +81,7 @@ def add_book(books, labels, genres)
   puts 'Book added successfully!'
   puts
 end
+
 def add_music_album(music_albums, labels, genres)
   puts '=== Add a Music Album ==='
   print 'Title: '
@@ -101,6 +108,7 @@ def add_music_album(music_albums, labels, genres)
   puts 'Music album added successfully!'
   puts
 end
+
 def add_game(games, authors)
   puts '=== Add a Game ==='
   print 'Genre: '
